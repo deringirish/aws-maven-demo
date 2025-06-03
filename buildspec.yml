@@ -3,8 +3,15 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo Installing dependencies and building the project
-      - mvn clean install
+      - echo Installing dependencies...
+  build:
+    commands:
+      - echo Building the project...
+      - mvn clean package
+  post_build:
+    commands:
+      - echo Running unit tests...
+      - mvn test
 
 artifacts:
   files:
