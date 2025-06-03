@@ -3,14 +3,15 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo Installing dependencies...
+      - echo Installing dependencies
+      - mvn clean install -DskipTests=true
   build:
     commands:
-      - echo Building the project...
-      - mvn clean package
-  post_build:
+      - echo Building project
+      - mvn package
+  test:
     commands:
-      - echo Running unit tests...
+      - echo Running tests
       - mvn test
 
 artifacts:
